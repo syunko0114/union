@@ -1,0 +1,289 @@
+@charset "utf-8";
+html{
+  scroll-behavior: smooth;
+}
+body
+{
+    font-family: 'Noto Serif JP', serif;
+    transition: background-color 1s;
+    transition: background-color 2s;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    color: black;
+}
+ul{
+list-style: none;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+.clear{clear: both;}
+.hidden{display: none;}
+
+/* ////////////////////////////////
+ヘッダー
+/////////////////////////////////*/
+
+/* ////////////////////////////////
+トップビデオ
+/////////////////////////////////*/
+#topmovframe{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+#topmov_logo{
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  animation: logofeedin 1s forwards;
+}
+@keyframes logofeedin{
+  1%{
+    opacity: 0;
+    transform: translate(-50%,-50%) scale(0.7);
+  }
+  100%{
+    opacity: 0.9;
+    transform: translate(-50%,-50%) scale(0.5);
+  }
+}
+.topmov{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#topmov_scroll{
+  position: absolute;
+  left: 50%;
+  top: 85%;
+  opacity: 0.8;
+  transform: translate(-50%,-50%) scale(0.5);
+}
+/* ////////////////////////////////
+メイン　
+/////////////////////////////////*/
+main section:nth-of-type(n+2){
+  width: 60%;
+  min-width: 350px;
+  margin: 0 auto;
+}
+.section_text{
+  margin-top: 55px;
+  margin-left: -100px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+.section_text h2{
+  font-size: 35px;
+  margin: 0;
+}
+.section_text h3{
+  font-weight: bold;
+  color: rgb(180, 0, 0);
+  font-size: 20px;
+  margin: 0 10px;
+}
+
+.form_ancar{
+  color: black;
+  margin: 20px auto;
+  text-align: center;
+  padding: 10px 20px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+.form_ancar:hover{
+  color: rgb(255, 255, 255);
+  background-color: black;
+  transition: 0.5s;
+}
+/* ////////////////////////////////
+メイン　企業概要
+/////////////////////////////////*/
+#kigyou{
+  position: relative;
+  height: 600px;
+}
+#kigyou img{
+  min-width: 350px;
+  width: max(60%,300px);
+  position: absolute;
+  left: 0%;
+}
+#kigyou p{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 30px;
+  background-color: white;
+  font-size: 16px;
+  box-shadow: rgb(121, 121, 121) 2px 2px 3px;
+  width: 50%;
+  min-width: 300px;
+  opacity: 0;
+  transform: translate(0%,20%);
+}
+#kigyou.active p{
+  opacity: 1;
+  transform: translate(0%,0%);
+  transition: 1s;
+}
+/* ////////////////////////////////
+メイン　事業内容
+/////////////////////////////////*/
+#zigyou{
+  text-align: center;
+}
+#zigyou_p{
+  padding: 10px 20px;
+  transform: scaleX(0%);
+  background-color: rgb(230, 230, 230);
+}
+#zigyou.active #zigyou_p{
+  transform: scaleX(100%);
+  transition: 1s ;
+}
+#zigyou_p p{
+  text-align: left;
+  opacity: 0;
+  transform: translate(0%,20%);
+}
+#zigyou.active #zigyou_p p{
+  opacity: 1;
+  transform: translate(0%,0%);
+  transition: 1s 1s;
+}
+#zigyou_img{
+  margin: 50px auto 0px;
+  width: 100%;
+}
+.service_content{
+  position: relative;
+  width: 100%;
+  min-width: 300px;
+  height: 450px;
+  margin: 50px auto;
+}
+.service_img{
+  position: absolute;
+  height: 400px;
+  width: 50%;
+  min-width: 300px;
+}
+#zigyou_img .service_content:nth-child(odd) .service_img{
+  top: 0;
+  left: 0;
+}
+#zigyou_img .service_content:nth-child(even) .service_img{
+  top: 0;
+  right: 0;
+}
+.service_img_re{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.service_img_darkness{
+  position: absolute;
+  transform: scaleX(0%);
+  transform-origin: left;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+}
+.service_img_picture{
+  position: absolute;
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
+  transform-origin: left;
+  height: 100%;
+  width: 100%;
+}
+#service01 .service_img_picture{  background-image: url(./img/work/01.jpg);}
+#service02 .service_img_picture{  background-image: url(./img/work/02.jpg);}
+#service03 .service_img_picture{  background-image: url(./img/work/03.jpg);}
+#service04 .service_img_picture{  background-image: url(./img/work/04.jpg);}
+.service_content.active .service_img_darkness{
+  transform: scaleX(100%);
+  transition: 1s;
+}
+.service_content.active .service_img_picture{
+  opacity: 1;
+  transition: 1s 1s;
+}
+.service_content.active .service_p{
+  box-shadow: rgb(105, 105, 105) 2px 2px 3px;
+  background-color: white;
+  transform: translate(0%,0%);
+  transition: 1s 1s;
+}
+.service_content.active p:nth-of-type(1){
+  transform: translate(0%,0%);
+  opacity: 1;
+  transition: 1s 1.5s;
+}
+.service_content.active p:nth-of-type(2){
+  transform: translate(0%,0%);
+  opacity: 1;
+  transition: 1s 2s;
+}
+.service_content.active p:nth-of-type(3){
+  transform: translate(0%,0%);
+  opacity: 1;
+  transition: 1s 2.5s;
+}
+.service_p{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  transform: translate(0%,20%);
+  z-index: 1;
+  width: 60%;
+  min-width: 300px;
+  text-align: center;
+}
+#zigyou_img .service_content:nth-child(odd) .service_p{
+  bottom: 0;
+  right: 0;
+}
+#zigyou_img .service_content:nth-child(even) .service_p{
+  bottom: 0;
+  left: 0;
+}
+
+.service_p p:nth-of-type(1){
+  text-align: left;
+  margin: 20px 0px 0px 20px;
+  transform: translate(0%,20%);
+  opacity: 0;
+}
+.service_p p:nth-of-type(2){
+  text-align: left;
+  font-weight: bold;
+  font-size: large;
+  margin: 20px 0px 20px 20px;
+  transform: translate(0%,20%);
+  opacity: 0;
+}
+.service_p p:nth-of-type(3){
+  text-align: left;
+  margin: 0px 0px 40px 20px;
+  transform: translate(0%,20%);
+  opacity: 0;
+}
+/* ////////////////////////////////
+メイン　求人内容
+/////////////////////////////////*/
+
+/* ////////////////////////////////
+フッター
+/////////////////////////////////*/

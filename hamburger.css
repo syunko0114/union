@@ -1,0 +1,174 @@
+.hamburger {
+  display : block;
+  position: fixed;
+  z-index : 4;
+  right : 32px;
+  top   : 32px;
+  width : 42px;
+  height: 42px;
+  cursor: pointer;
+  text-align: center;
+  
+}
+.hamburger span {
+  display : block;
+  position: absolute;
+  width   : 30px;
+  height  : 2px ;
+  left    : 6px;
+  background : rgb(255, 255, 255);
+  -webkit-transition: 0.5s all;
+  -moz-transition   : 0.5s all;
+  transition        : 0.5s all;
+}
+.hamburger span:nth-child(1) {
+  top: 10px;
+}
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+.hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+/* ナビ開いてる時のボタン */
+
+.hamburger.active span:nth-child(1) {
+  top : 16px;
+  left: 6px;
+  width: 24px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform   : rotate(-45deg);
+  transform        : rotate(-45deg);
+}
+.hamburger.active span:nth-child(2) {
+  left: 60%;
+  opacity: 0;
+  -webkit-animation: active-btn17-bar02 .8s forwards;
+  animation: active-hamburger-bar02 .8s forwards;
+}
+@-webkit-keyframes active-hamburger-bar02 {
+  100% {
+    height: 0;
+  }
+}
+@keyframes active-hamburger-bar02 {
+  100% {
+    height: 0;
+  }
+}
+.hamburger.active span:nth-child(3) {
+  top: 16px;
+  width: 24px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform   : rotate(45deg);
+  transform        : rotate(45deg);
+}
+
+
+.hamburger::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  content: '';
+  width: 52px;
+  height: 52px;
+  margin: -32px 0 0 -32px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0);
+  transition: all .75s;
+}
+.hamburger.active::after {
+  border: 2px solid #555;
+}
+
+nav.globalMenuSp {
+  position: fixed;
+  z-index : 3;
+  top  : 0;
+  left : 0;
+  color: #000;
+  background: #fff;
+  text-align: center;
+  transform: translateY(-100%);
+  transition: all 0.6s;
+  width: 100vw;
+  height: 100vh;
+}
+
+nav.globalMenuSp ul {
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translate(0%,-50%);
+  -webkit-transform: translate(0%,-50%);
+  transform: translate(0%,-50%);
+  left: 20vw;
+  margin: 0 auto;
+  padding: 0;
+}
+
+nav.globalMenuSp ul li {
+  list-style-type: none;
+  padding: 0;
+  width: auto;
+}
+nav.globalMenuSp ul li:last-child {
+  padding-bottom: 0;
+}
+nav.globalMenuSp ul li a:hover{
+  background-color: black;
+  transition: 0.5s;
+  color: white;
+}
+
+nav.globalMenuSp ul li a {
+  display: block;
+  color: #000;
+  text-decoration :none;
+  margin: 40px;
+}
+#now{
+  background-color: #000;
+  color: white;
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
+  transform: translateY(0%);
+  animation: animation-header 1s linear 1s 1 normal forwards running;
+}
+.active_opacity.active{
+  animation: animation-keyframes 1s linear 0s 1 normal forwards running;
+}
+.active_black.active{
+  filter: brightness(0)!important;
+}
+#body.active{
+  animation: body_fixed 1s linear 0.6s 1 normal forwards running;
+}
+@keyframes body_fixed {
+  from {
+		position: fixed;
+	}
+	to {
+		position: fixed;
+	}
+}
+@keyframes animation-keyframes {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes animation-header {
+	from {
+	}
+	to {
+    background-color: rgba(248, 248, 248, 0.5);
+	}
+}
