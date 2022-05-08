@@ -7,22 +7,43 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="apple-touch-icon" href="./img/icon.png">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="hamburger.css">
+    <link rel="stylesheet" href="moveanimation.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script src="./smoothscroll.js"></script>
     <script src="./jquery-3.6.0.min.js"></script>
+    <script src="hamburger.js"></script>
     <title>合同会社UNIOM</title>
 </head>
 
+<div id="move_animation" >
+  <div id="move_animation_top"></div>
+  <div id="move_animation_bottom"></div>
+</div>
 <body>
-    <header id="nav">
-      <nav>
+    <header>
+      <div class="hamburger phone">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <nav class="globalMenuSp phone">
+          <ul>
+              <li><a class="hamburgeroff" href="#kigyou">企業概要</a></li>
+              <li><a class="hamburgeroff" href="#zigyou">事業内容</a></li>
+              <li><a class="hamburgeroff" href="#kyuujin">求人内容</a></li>
+              <li><a class="hamburgeroff" href="#">お問い合わせ</a></li>
+            </ul>
+      </nav>
+      <nav id="nav" class="pc">
         <ul>
           <li>▶</li>
-          <li><a href="#">企業概要</a></li>
-          <li><a href="#">事業内容</a></li>
-          <li><a href="#">求人内容</a></li>
+          <li><a href="#kigyou">企業概要</a></li>
+          <li><a href="#zigyou">事業内容</a></li>
+          <li><a href="#kyuujin">求人内容</a></li>
           <li><a href="#">お問い合わせ</a></li>
         </ul>
       </nav>
@@ -43,11 +64,10 @@
     <div class="section_text">
       <div style="background-color: black;margin: 0px 10px; width: 80px;height: 2px;"></div>
       <h2>企業概要</h2>
-      <h3>Unionとは？</h3>
+      <h3>荷主様、配送企業様向けサービス</h3>
     </div>
     <img src="./img/highway.png" alt="">
-    <p>荷主様、配送企業様向けサービス
-      西東京地区で軽貨物運送業をはじめとした"軽バンで出来る事"を中心とし
+    <p>西東京地区で軽貨物運送業をはじめとした"軽バンで出来る事"を中心とし
       その他には、ホームページ制作や、不動産など幅広いサービスを展開しており、なかでも軽貨物業には積極的に取り組んでいます。<br>
       配送、臨時便、長距離、精密機械、宅食など
       近年、ネットショッピング利用者数も増え需要が増加しているため物流は増加傾向にあります。<br>
@@ -62,7 +82,7 @@
       <h3>私たちができること</h3>
     </div>
     <div id="zigyou_p">
-      <p>荷主様、配送企業様向けサービス
+      <p>荷主様、配送企業様向けサービス<br>
         西東京地域をメインに神奈川東京の配送業務を行っております。
         大手運送企業では難しい配送案件についても、責任をもって全力で対応いたします。<br>
         企業便、宅配便、チャーター便、臨時便など・・・
@@ -79,14 +99,14 @@
           </div>
           <div class="service_p">
             <p>-01</p>
-            <p>某スーパーマーケットさんとの業務委託</p>
+            <p>青果納品、臨時便のお仕事</p>
             <p>サンプルサンプルサンプルサンプル</p>
           </div>
         </div>
         <div id="service02"class="service_content">
           <div class="service_p">
             <p>-02</p>
-            <p>某インターネット通販会社さんとの業務委託</p>
+            <p>大手ECサイト商品の配送</p>
             <p>サンプルサンプルサンプルサンプル</p>
           </div>
           <div class="service_img">
@@ -105,14 +125,16 @@
           </div>
           <div class="service_p">
             <p>-03</p>
-            <p>某ケーキ屋さんとの業務委託</p>
+            <p>深夜早朝チャーター便</p>
             <p>サンプルサンプルサンプルサンプル</p>
           </div>
         </div>
       </div>
-      <a class="form_ancar"href="">お問い合わせ</a>
+      <a class="form_ancar" href="#">お問い合わせ</a>
   </section>
+
   <section id="kyuujin">
+    
     <div class="section_text">
       <div style="background-color: black;margin: 0px 10px; width: 80px;height: 2px;"></div>
       <h2>求人内容</h2>
@@ -120,28 +142,104 @@
     </div>
     <p>Unionでは、現在フリーランスでのドライバーさんを随時募集しております。</p>
     <p>非公開の求人や、スポット、チャータ便など稼げるお仕事などはお問合せしていただけたらと思います。<br>ぜひお気軽にお問合せいただけたらと思います</p>
-    <p>収入例</p>
-    <p>①勤務地 昭島市
-      8時～18時
-      月給　300,000～600,000円</p>
-    <p>②勤務地　府中市
-      8時～20時
-      月給　300,000～450,000円</p>
-    <p>③勤務地　三鷹市
-      月給　350,000～600,000円
-      6時30分～17時</p>
-    <p>④勤務地　三鷹市
-      月給　300,000～450,000円
-      8時～19時30分</p>
-    <p>⑤勤務地　調布市
-      月給　300,000～450,000円
-      8時～20時</p>
-    <p>⑥勤務地　川崎市多摩区
-      月給　300,000～450,000円
-      8時～20時</p>
+    <!-- <table class="design08">
+      <tr>
+       <th>業務例</th>
+       <th>勤務地</th>
+       <th>業務時間</th>
+       <th>月収</th>
+       </tr>
+      <tr>
+       <td>①</td>
+       <td>昭島市</td>
+       <td>8:00～18:00</td>
+       <td>300,000～600,000円</td>
+      </tr>
+      <tr>
+        <td>②</td>
+        <td>府中市</td>
+        <td>8:00～20:00</td>
+        <td>300,000～450,000円</td>
+      </tr>
+      <tr>
+        <td>③</td>
+        <td rowspan="2">三鷹市</td>
+        <td>6:30～17:00</td>
+        <td>350,000～600,000円</td>
+      </tr>
+      <tr>
+        <td>④</td>
+        
+        <td>8:00～19:30</td>
+        <td>300,000～450,000円</td>
+      </tr>
+      <tr>
+        <td>⑤</td>
+        <td>調布市</td>
+        <td>8:00～20:00</td>
+        <td>300,000～450,000円</td>
+      </tr>
+      <tr>
+        <td>⑥</td>
+        <td>川崎市多摩区</td>
+        <td>8:00～20:00</td>
+        <td>300,000～450,000円</td>
+      </tr>
+     </table> -->
+     <div id="kyuujin_address">
+       <p>ご不明な点がございましたら、まずはお気軽にご相談下さい。</p>
+       <p>042-649-8352</p>
+       <p><a href="#">→お問い合わせフォームはこちら</a></p>
+     </div>
   </section>
 </main>
     <footer>
+      <div>
+        <div>
+          企業概要
+          <ul>
+            <li><a href="">- Unionとは？</a></li>
+          </ul>
+        </div>
+        <div>
+          事業内容
+          <ul>
+            <li><a href="">- 私たちにできること</a></li>
+          </ul>
+        </div>
+        <div>
+          業務実績
+          <ul>
+            <li><a href="">- 某スーパーマーケット</a></li>
+            <li><a href="">- 某インターネット通販</a></li>
+            <li><a href="">- 某ケーキ屋さん</a></li>
+          </ul>
+        </div>
+        <div>
+          求人内容
+          <ul>
+            <li><a href="">- 業務例</a></li>
+            <li><a href="">- 応募フォーム</a></li>
+          </ul>
+        </div>
+        <div>
+          <a href="">よくある質問</a>
+        </div>
+        <div>
+          お問い合わせ
+          <ul>
+            <li><a href="">-入力フォーム</a></li>
+            <li>tel: <a type="tel" href="042-649-8352"></a>042-649-8352</li>
+          </ul>
+        </div>
+        <div>
+          <img src="./img/logo.png" width="100px">
+          <p>〒192-0081<br>東京都八王子市横山町3-13<br>矢島ビル6階<br>tel:042-649-8352</p>
+          <div id="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.734373952392!2d139.3370044155345!3d35.658915538802425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f25!3m3!1m2!1s0x60191dd8c6545801%3A0x7ac5a4449ee93b3b!2z44CSMTkyLTAwODEg5p2x5Lqs6YO95YWr546L5a2Q5biC5qiq5bGx55S677yT4oiS77yR77yTIOefouWztuODk-ODqyA26ZqO!5e0!3m2!1sja!2sjp!4v1651810032530!5m2!1sja!2sjp" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <a href="https://www.google.co.jp/maps/place/%E3%80%92192-0081+%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%85%AB%E7%8E%8B%E5%AD%90%E5%B8%82%E6%A8%AA%E5%B1%B1%E7%94%BA%EF%BC%93%E2%88%92%EF%BC%91%EF%BC%93+%E7%9F%A2%E5%B3%B6%E3%83%93%E3%83%AB+6%E9%9A%8E/@35.6589155,139.3370044,17z/data=!3m1!4b1!4m5!3m4!1s0x60191dd8c6545801:0x7ac5a4449ee93b3b!8m2!3d35.6589112!4d139.3391931?hl=ja">→GoogleMap</a>
+        </div>
+      </div>
+      <p>Copyright © 2022 Union Inc. All Rights Reserved.</p>
     </footer>
 </body>
 </html>

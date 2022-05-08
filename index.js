@@ -1,4 +1,4 @@
-window.setTimeout(function(){
+setTimeout(function(){
   $("#mov02").removeClass("hidden");
   $("#mov01").addClass("hidden");
 }, 4000);
@@ -65,8 +65,10 @@ var windowHeight = document.documentElement.clientHeight;
 $(window).scroll(function () {
   if($(window).scrollTop() > windowHeight) {
     $('#nav').addClass('color_change');
+    $('.hamburger').addClass('color_change');
   } else {
     $('#nav').removeClass('color_change');
+    $('.hamburger').removeClass('color_change');
   }
 });
 $(window).scroll(function () {
@@ -75,4 +77,34 @@ $(window).scroll(function () {
   } else {
     $('#header_fixed_text').removeClass('color_change');
   }
+});
+
+$(function(){
+$('a').click(function(){
+  $('#move_animation').addClass('active');
+  setTimeout(function(){
+    $("#move_animation").removeClass("active");
+  }, 2000);
+});
+});
+
+$(function(){
+  // #で始まるアンカーをクリックした場合に処理
+  $('a[href^="#"]').click(function(){
+    // スクロールの速度
+    var speed = 1; // ミリ秒
+    // アンカーの値取得
+    var href= $(this).attr("href");
+    // 移動先を取得
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    // 移動先を調整
+    var position = target.offset().top;
+    // スムーススクロール
+
+    setTimeout(function(){
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+    }, 1000);
+    return false;
+    
+  });
 });

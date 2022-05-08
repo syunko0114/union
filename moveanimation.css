@@ -1,0 +1,46 @@
+@charset "utf-8";
+#move_animation{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  pointer-events: none;
+}
+#move_animation.active{
+  pointer-events: all;
+}
+#move_animation_top{
+  position: absolute;
+  top:50%;
+  left: 100%;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 22);
+  transition:all 1s;
+}
+#move_animation_bottom{
+  position: absolute;
+  bottom: 50%;
+  right: 100%;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 22);
+  transition:all 1s;
+}
+#move_animation.active #move_animation_bottom{
+  animation: move_animation_ltr 2s ease;
+}
+#move_animation.active #move_animation_top{
+  animation: move_animation_rtl 2s ease;
+}
+
+@keyframes move_animation_rtl{
+  1%{left: 100%;}
+  50%{left: 0%;}
+  100%{left: -100%;}
+}
+@keyframes move_animation_ltr{
+  1%{right: 100%;}
+  50%{right: 0%;}
+  100%{right: -100%;}
+}

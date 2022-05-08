@@ -21,6 +21,9 @@
   -moz-transition   : 0.5s all;
   transition        : 0.5s all;
 }
+.hamburger.color_change span{
+  background: rgb(36, 36, 36);
+}
 .hamburger span:nth-child(1) {
   top: 10px;
 }
@@ -34,6 +37,7 @@
 /* ナビ開いてる時のボタン */
 
 .hamburger.active span:nth-child(1) {
+  background : rgb(36, 36, 36);
   top : 16px;
   left: 6px;
   width: 24px;
@@ -42,6 +46,7 @@
   transform        : rotate(-45deg);
 }
 .hamburger.active span:nth-child(2) {
+  background : rgb(36, 36, 36);
   left: 60%;
   opacity: 0;
   -webkit-animation: active-btn17-bar02 .8s forwards;
@@ -58,6 +63,7 @@
   }
 }
 .hamburger.active span:nth-child(3) {
+  background : rgb(36, 36, 36);
   top: 16px;
   width: 24px;
   -webkit-transform: rotate(45deg);
@@ -169,6 +175,6 @@ nav.globalMenuSp.active {
 	from {
 	}
 	to {
-    background-color: rgba(248, 248, 248, 0.5);
+    background-color: rgba(248, 248, 248, 0.8);
 	}
 }
