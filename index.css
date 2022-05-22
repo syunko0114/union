@@ -140,7 +140,10 @@ a{
 /* ////////////////////////////////
 メイン　
 /////////////////////////////////*/
-@media screen and (max-width: 543px) {
+main{
+  position: relative;
+}
+@media screen and (max-width: 549px) {
   main section:nth-of-type(n+2){
     width: 80%;
     margin: 0 auto;
@@ -155,7 +158,7 @@ a{
     font-size: 15px!important;
    }
 }
-@media screen and (min-width: 544px) {
+@media screen and (min-width: 550px) {
   main section:nth-of-type(n+2){
     width: 60%;
     min-width: 350px;
@@ -267,26 +270,30 @@ a{
   margin: 50px auto 0px;
   width: 100%;
 }
+@media screen and (max-width: 912px) {
+  .service_img{
+    width: 100%;
+  }
+}
+@media screen and (min-width: 913px) {
+  .service_content{
+    height: 350px;
+  }
+  .service_img{
+    position: absolute;
+    width: 50%;
+  }
+}
 .service_content{
   position: relative;
   width: 90%;
   min-width: 300px;
-  height: 350px;
   margin: 50px auto;
 }
 .service_img{
-  position: absolute;
+  margin: 0 auto;
   height: 300px;
-  width: 50%;
   min-width: 300px;
-}
-#zigyou_img .service_content:nth-child(odd) .service_img{
-  top: 0;
-  left: 0;
-}
-#zigyou_img .service_content:nth-child(even) .service_img{
-  top: 0;
-  right: 0;
 }
 #zigyou_img .service_content:nth-child(even) .service_img_darkness{
   transform-origin: right;
@@ -334,39 +341,57 @@ a{
 .service_content.active p:nth-of-type(1){
   transform: translate(0%,0%);
   opacity: 1;
-  transition: 1s 1.5s;
+  transition: 1s 1.2s;
 }
 .service_content.active p:nth-of-type(2){
   transform: translate(0%,0%);
   opacity: 1;
-  transition: 1s 2s;
+  transition: 1s 1.5s;
 }
 .service_content.active p:nth-of-type(3){
   transform: translate(0%,0%);
   opacity: 1;
-  transition: 1s 2.5s;
+  transition: 1s 1.8s;
+}
+@media screen and (max-width: 912px) {
+  .service_p{
+    width: 100%;
+  }
+}
+@media screen and (min-width: 913px) {
+  .service_p{
+    position: absolute;
+    width: 60%;
+  }
+  #zigyou_img .service_content:nth-child(odd) .service_p{
+    bottom: 0;
+    right: 0;
+  }
+  #zigyou_img .service_content:nth-child(even) .service_p{
+    bottom: 0;
+    left: 0;
+  }
+  #zigyou_img .service_content:nth-child(odd) .service_img{
+    top: 0;
+    left: 0;
+  }
+  #zigyou_img .service_content:nth-child(even) .service_img{
+    top: 0;
+    right: 0;
+  }
 }
 .service_p{
-  position: absolute;
+  margin: 0 auto;
   background-color: rgba(255, 255, 255, 0);
   transform: translate(0%,20%);
   z-index: 1;
-  width: 60%;
   min-width: 300px;
   text-align: center;
-}
-#zigyou_img .service_content:nth-child(odd) .service_p{
-  bottom: 0;
-  right: 0;
-}
-#zigyou_img .service_content:nth-child(even) .service_p{
-  bottom: 0;
-  left: 0;
 }
 
 .service_p p:nth-of-type(1){
   text-align: left;
-  margin: 20px 0px 0px 20px;
+  margin: 0px;
   transform: translate(0%,20%);
   opacity: 0;
 }
@@ -389,6 +414,7 @@ a{
 /////////////////////////////////*/
 #kyuujin{
   margin-top: 50px;
+  padding-bottom: 100px;
 }
 #kyuujin p{
   margin: 0 auto;
@@ -438,12 +464,47 @@ a{
   color: black;
   text-decoration: underline;
 }
+/*//////////////////////////////// 
+ナビゲーション
+////////////////////////////////*/
+#navigation{
+  padding-right: calc(50% - 50vw);
+  padding-left: calc(50% - 50vw);
+  background-image: url(./img/kyuujin_background.png);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+#navigation>div{
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: white;
+}
+.navigation_box{
+  margin: 50px 0px;
+  border: 2px solid rgb(255, 255, 255);
+  width: 30%;
+  height: 200px;
+  position: relative;
+}
+.navigation_h3{
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.navigation_h3 h3{
+  font-size: 25px;
+}
 /* ////////////////////////////////
 フッター
 /////////////////////////////////*/
 footer{
   color: white;
-  margin-top: 100px;
   background-color: #0E192D;
 }
 @media screen and (max-width: 677px) {
